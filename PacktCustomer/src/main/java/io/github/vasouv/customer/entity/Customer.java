@@ -3,11 +3,11 @@ package io.github.vasouv.customer.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.eclipse.persistence.annotations.UuidGenerator;
 
 /**
  *
@@ -21,9 +21,8 @@ import org.eclipse.persistence.annotations.UuidGenerator;
 public class Customer {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @UuidGenerator(name = "uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "fullName")
     private String fullName;
@@ -31,11 +30,19 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    public String getId() {
+    public Customer() {
+    }
+
+    public Customer(String fullName, String email) {
+        this.fullName = fullName;
+        this.email = email;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
