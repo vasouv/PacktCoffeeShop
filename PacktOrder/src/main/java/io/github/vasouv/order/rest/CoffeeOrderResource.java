@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
  *
  * @author vasouv
  */
-@Path("/orders")
+@Path("orders")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

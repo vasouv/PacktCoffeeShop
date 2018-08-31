@@ -1,14 +1,13 @@
 package io.github.vasouv.order.entity;
 
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.eclipse.persistence.annotations.UuidGenerator;
 
 /**
  *
@@ -22,9 +21,8 @@ import org.eclipse.persistence.annotations.UuidGenerator;
 public class CoffeeOrder {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @UuidGenerator(name = "uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "coffeeName")
     private String coffeeName;
@@ -33,14 +31,10 @@ public class CoffeeOrder {
     private String price;
 
     @Column(name = "customerId")
-    private String customerId;
+    private Long customerId;
 
-    public String getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCoffeeName() {
@@ -59,11 +53,11 @@ public class CoffeeOrder {
         this.price = price;
     }
 
-    public String getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 
