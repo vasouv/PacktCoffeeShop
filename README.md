@@ -12,3 +12,6 @@ Uses the Payara embedded H2 database and Microprofile 1.3. Can be deployed on a 
 
 ## Orders
 Uses H2 as an external DB which is configured in web.xml and is updated to Microprofile 1.3. Can be deployed on a Payara Web or Full server, or on Payara Micro (as intended) with `java -jar <payara-micro>.jar PacktOrder.war --port 8086`
+
+## Service
+Acts as aggregator for the Customers and Orders microservices and is access point for the UI microservice. If is deployed locally with `java -jar <payara-micro>.jar PacktService.war --port 8087`, the config properties must change and show to **localhost** instead of the Docker network URI.
