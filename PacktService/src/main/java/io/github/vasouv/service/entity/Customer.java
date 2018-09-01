@@ -6,24 +6,24 @@ package io.github.vasouv.service.entity;
  */
 public class Customer {
 
-    private String id;
+    private Long id;
     private String fullName;
     private String email;
 
     public Customer() {
     }
 
-    public Customer(String id, String fullName, String email) {
+    public Customer(Long id, String fullName, String email) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -14,7 +14,7 @@ services:
             - "8086:8080"
     aggregator:
         container_name: "aggregator"
-        image: vasouv/aggregator
+        image: vasouv/packtaggregator
         depends_on:
             - customer
             - order

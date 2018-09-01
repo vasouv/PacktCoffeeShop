@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -22,6 +23,7 @@ import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 /**
  *
@@ -33,8 +35,13 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 public class ServiceAggregator {
 
-    private final String CUSTOMER_SERVICE_URI = "http://customer:8080/PacktCustomer/packt-customers";
-    private final String ORDER_SERVICE_URI = "http://order:8080/PacktOrder/packt-orders";
+    @Inject
+    @ConfigProperty(name = "customerURI")
+    private String CUSTOMER_SERVICE_URI;
+    
+    @Inject
+    @ConfigProperty(name = "orderURI")
+    private String ORDER_SERVICE_URI;
 
     Client client;
     WebTarget customerTarget;
