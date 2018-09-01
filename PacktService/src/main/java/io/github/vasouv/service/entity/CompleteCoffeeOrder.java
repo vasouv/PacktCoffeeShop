@@ -11,12 +11,12 @@ public class CompleteCoffeeOrder {
 
     private String coffeeName;
     private String coffeePrice;
-    private String customerID;
+    private Long customerID;
 
     public CompleteCoffeeOrder() {
     }
 
-    public CompleteCoffeeOrder(String customerName, String email, String coffeeName, String coffeePrice, String customerID) {
+    public CompleteCoffeeOrder(String customerName, String email, String coffeeName, String coffeePrice, Long customerID) {
         this.customerName = customerName;
         this.email = email;
         this.coffeeName = coffeeName;
@@ -56,11 +56,11 @@ public class CompleteCoffeeOrder {
         this.coffeePrice = coffeePrice;
     }
 
-    public String getCustomerID() {
+    public Long getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
+    public void setCustomerID(Long customerID) {
         this.customerID = customerID;
     }
 

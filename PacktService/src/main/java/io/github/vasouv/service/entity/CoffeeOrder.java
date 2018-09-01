@@ -6,26 +6,26 @@ package io.github.vasouv.service.entity;
  */
 public class CoffeeOrder {
 
-    private String id;
+    private Long id;
     private String coffeeName;
     private String price;
-    private String customerId;
+    private Long customerId;
 
     public CoffeeOrder() {
     }
 
-    public CoffeeOrder(String id, String coffeeName, String price, String customerId) {
+    public CoffeeOrder(Long id, String coffeeName, String price, Long customerId) {
         this.id = id;
         this.coffeeName = coffeeName;
         this.price = price;
         this.customerId = customerId;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -45,11 +45,11 @@ public class CoffeeOrder {
         this.price = price;
     }
 
-    public String getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 
